@@ -1,0 +1,40 @@
+package Part3;
+
+import java.util.Scanner;
+
+public class GPA {
+
+	public static void main(String[] args) {
+	double score;
+	int course;
+
+	double sum=0;
+	int sum2=0;
+	Scanner s = new Scanner(System.in);
+	System.out.println("Please enter number of semesters:");
+	int semester = s.nextInt();
+	for (int j = 0; j < semester; j++) {
+		System.out.println("For semester number"+(j+1));
+	System.out.println("Please enter the number of passed courses:");
+	course = s.nextInt();
+	sum2=sum2+course;
+	int[] grade=new int[course];
+	for (int i = 0; i <course; i++) {
+		System.out.println("Enter grade number" +(i+1)+ ":");	
+		grade[i] = s.nextInt();
+		
+		if (grade[i]>=30) {
+		sum=sum+grade[i];
+
+		}
+		else {
+			System.out.println("Course grade is below 30, Please enter your grade");
+			i=i+1;
+		}
+	}
+	System.out.println("sum:"+sum);
+	System.out.println("Cumulative Gpa:"+sum/sum2);
+
+	}
+}
+}
